@@ -1,0 +1,593 @@
+:root{
+    --transition: all 0.7s ease;
+    --yellow: #f9d44294;
+    --dark: #262829a8;
+}
+.header {
+    position: relative; /* Make sure the header is positioned relative */
+    width: 100%;
+}
+.header-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-links a {
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+    margin: 0 10px; /* Adjust the spacing between links */
+    font-size: 18px; /* Adjust the font size of the links */
+    text-transform: uppercase; /* Transform text to uppercase */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.header-links a:hover {
+    color: var(--yellow); /* Change color on hover */
+}
+
+
+
+
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color */
+}
+
+.header-top .site-name h1 {
+    color: white; /* Adjust the color */
+    font-size: 24px; /* Adjust the font size */
+    font-weight: bold; /* Adjust the font weight */
+}
+
+.site-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.site-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.site-nav ul li a {
+    color: white; /* Adjust the color */
+    text-decoration: none;
+    font-size: 16px; /* Adjust the font size */
+}
+
+.site-nav ul li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+.head-bottom h2 {
+    font-size: 3rem; /* Adjust font size as needed */
+}
+
+.head-bottom .welcome {
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+.head-bottom .tag {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+.head-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.head-btn:hover {
+    background-color: white;
+    color: black;
+}
+.navbar {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
+    right: 20px; /* Adjust right position */
+}
+.title-wrapper {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* AHSING font */
+    font-size: 150px; /* Adjust font size as needed */
+    color: black; /* Text color */
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the title precisely */
+    z-index: 1; /* Ensure the title is above the background */
+}
+.dark-grey {
+    color: #333; /* Dark grey color */
+    font-size: larger;
+}
+.welcome {
+    font-size: 24px; /* Adjust font size as needed */
+    font-family: 'Times New Roman', Times, serif;
+    color: white; /* Text color */
+    text-align: center; /* Center align the welcome tag */
+    position: absolute; /* Absolute positioning */
+    top: calc(40% - 140px); /* Position above the title with space */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1; /* Ensure the welcome tag is above the background */
+}
+.tag {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Specify the Roboto font */
+    font-size: 60px; /* Adjust font size as needed */
+    color:#333; /* Text color */
+    text-align: center; /* Center align the tagline */
+    position: absolute; /* Absolute positioning */
+    top: calc(50% + 100px); /* Position below the title */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1; /* Ensure the tagline is above the background */
+}
+
+
+
+
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    line-height: 1.6;
+
+}
+.back{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10000;
+}
+.btn{
+    font-size: 16px;
+    text-transform: lowercase;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 140px;
+    display: block;
+    margin: 15px auto;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn:hover{
+    opacity: 0.85;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 8px 0;
+}
+img{
+    width: 100%;
+    display: block;
+}
+@media(max-width: 500px){
+    body{
+        font-size: 14px;
+    }
+}
+
+
+/*menu button*/
+.head-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ .head-top span:hover{
+    color: var(--yellow);
+}
+
+
+.head-top span{
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+
+
+/* side nav */
+.sidenav{
+    background: var(--dark);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    width: 300px;
+    padding: 20px;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+
+.sidenav.show{
+    right: 0;
+}
+
+.cancel-btn{
+    position: absolute;
+    right: 25px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.cancel-btn:hover{
+    opacity: 0.7;
+}
+.navbar{
+    margin-top: 50px;
+    list-style: none;
+    padding: 12px;
+}
+.navbar li a{
+    color: #fff;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 15px 0;
+    display: block;
+    border-bottom: 0.5px solid rgba(249, 211, 66, 0.3);
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+.navbar li a:hover{
+    padding-left: 12px;
+}
+.sign-up, .log-in{
+    background: var(--yellow);
+    color: #fff;
+}
+@media(max-width: 400px){
+    .sidenav{
+        width: 100vw;
+    }
+}
+
+/** title */
+.title{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 30px;
+    color: var(--yellow);
+    border-bottom: 5px solid var(--dark);
+    width: 235px;
+    margin: 15px 0;
+}
+
+.sec-width{
+    width: 85vw;
+    margin: 0 auto!important;
+}
+
+/* types */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+.gallery-item {
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+}
+.gallery-item:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+.gallery-item img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+.image-title {
+    font-weight: bold;
+    margin: 10px 0;
+    position: relative;
+    padding-bottom: 10px;
+}
+.image-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 1px;
+    background-color: #ccc;
+}
+.image-title i {
+    margin-right: 5px;
+    font-size: 20px;
+}
+.image-names {
+    margin-top: 5px;
+    text-align: left;
+    width: 100%;
+}
+.image-names p:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+/* 3-frames */
+body {
+    background-color:white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+header {
+    font-size: 24px;
+    margin: 20px 0;
+}
+.content {
+    display: flex;
+    width: 100%;
+    margin: 50px;
+    justify-content: space-around;
+}
+.image-display {
+    flex: 1;
+    max-width: 400px;
+
+}
+.options {
+    flex: -1;
+}
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+.rent-buy {
+    margin-top: 20px;
+}
+/* 4th */
+
+.contents {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Space between content sections */
+    align-items: center; /* Center alignment of all items */
+}
+.hello {
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    width: 40%; /* Adjusted for space */
+}
+.collection {
+    font-size: 80px;
+}
+.images {
+    display: flex;
+    align-items: center; /* Align images vertically */
+    justify-content: flex-start; /* Move images to the left */
+    margin-left: 5%; /* Additional left margin */
+}
+.images img {
+    margin: 5px;
+}
+/* .small, .medium, .large {
+    position: relative;
+} */
+.small { width: 240px; height: 300px; } 
+.large { width: 270px; height: 420px; } 
+.medium { width: 210px; height: 280px; }
+button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+.benefits {
+    display: flex; /* Align benefits in a row */
+    justify-content: space-around; /* Space evenly around the items */
+    width: 100%; /* Full width */
+    margin-top: 50px; /* Increased spacing */
+}
+.benefits div {
+    text-align: center;
+}
+.bi {
+    font-size: 2rem; /* Increased icon size */
+}
+/*new*/
+.content12 {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-around; /* Distribute space between the two sides */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.left-side {
+    flex: 1; /* Take up 50% of the container width */
+    display: flex;
+    justify-content: space-around; /* Distribute space between the images */
+}
+
+.left-side img {
+    width: 45%; /* Adjust width of the images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.right-side {
+    flex: 1; /* Take up 50% of the container width */
+    padding: 0 20px; /* Add padding to the right side for spacing */
+}
+
+.right-side h2 {
+    font-size: 24px; /* Increase font size for the heading */
+}
+
+.right-side p {
+    font-size: 18px; /* Increase font size for the paragraph */
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #131314; /* Example background color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #334488; /* Darker color on hover */
+}
+
+
+/*5 */
+h1 {
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+p.tagline {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+.profiles {
+    display: flex;
+    justify-content: space-around; /* Maintains even space distribution */
+    margin: 20px auto;
+    max-width: 1400px; /* Increased max width */
+    padding: 0 10px;
+}
+.profile {
+    flex: 1;  /* Allows each profile to grow equally */
+    margin: 0 20px; /* Increased margin for better spacing */
+    background: white;
+    padding: 30px; /* Increased padding for a more spacious layout */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.profile img {
+    width: 180px; /* Increased width */
+    height: 210px; /* Increased height */
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.details {
+    margin-top: 15px; /* Increased margin for better separation */
+    color: #333;
+}
+.profile:hover {
+    transform: scale(1.05); /* Enlarges the profile slightly */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Darker shadow for a 3D effect */
+}
+/*6-tools*/
+h1 {
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 10px;
+}
+.tool {
+    background-color: white;
+    width: calc(33.333% - 10px); /* Adjusting the width to fit three items exactly per row */
+    margin: 5px; /* Small margins for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+}
+.tool img {
+    width: 100%;
+    height: auto;
+}
+.details {
+    text-align: left;
+    padding-top: 10px;
+}
+.tool:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+/* 7 footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+.footer-icons a {
+    font-size: 24px; /* Icon size can be adjusted */
+    margin: 0 10px;
+    color: #505317; /* Icon color */
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.footer-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+.footer hr {
+    margin-top: 20px;
+}
